@@ -3,7 +3,7 @@ import { Box, Text, VStack, Link } from "@chakra-ui/react";
 function DownloadableFiles() {
   return (
     <Box p="4">
-      <VStack spacing={6} boxShadow="base" p="6" rounded="md" bg="whiteAlpha.900">
+      <VStack spacing={4}>
         <Text fontSize="xl">Downloadable Files Page</Text>
         <Link href="/files/enriched_data_1.csv" download color="teal.500" p="2">
           Download Enriched Data 1
