@@ -20,13 +20,13 @@ function Enricher() {
     return criteria.map((criteria, index) => (
       <HStack key={index} spacing={2}>
         <Input value={criteria} onChange={(e) => handleCriteriaChange(index, e.target.value, type)} placeholder={`${type} criteria ${index + 1}`} />
-        <Button colorScheme={criteria[index] === "High" ? "green" : "gray"} onClick={() => handleCriteriaChange(index, "High", type)}>
+        <Button colorScheme="green" onClick={() => handleCriteriaChange(index, "High", type, false)}>
           High
         </Button>
-        <Button colorScheme={criteria[index] === "Medium" ? "yellow" : "gray"} onClick={() => handleCriteriaChange(index, "Medium", type)}>
+        <Button colorScheme="yellow" onClick={() => handleCriteriaChange(index, "Medium", type, false)}>
           Medium
         </Button>
-        <Button colorScheme={criteria[index] === "Low" ? "red" : "gray"} onClick={() => handleCriteriaChange(index, "Low", type)}>
+        <Button colorScheme="red" onClick={() => handleCriteriaChange(index, "Low", type, false)}>
           Low
         </Button>
       </HStack>
