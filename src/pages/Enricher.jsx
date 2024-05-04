@@ -7,10 +7,12 @@ function Enricher() {
   const [disqualificationCriteria, setDisqualificationCriteria] = useState(Array(4).fill(""));
   const [selectedFile, setSelectedFile] = useState("");
 
-  const handleCriteriaChange = (index, value, type) => {
-    const updateCriteria = type === "qualification" ? [...qualificationCriteria] : [...disqualificationCriteria];
-    updateCriteria[index] = value;
-    type === "qualification" ? setQualificationCriteria(updateCriteria) : setDisqualificationCriteria(updateCriteria);
+  const handleCriteriaChange = (index, value, type, isTextUpdate = true) => {
+    if (isTextUpdate) {
+      const updateCriteria = type === "qualification" ? [...qualificationCriteria] : [...disqualificationCriteria];
+      updateCriteria[index] = value;
+      type === "qualification" ? setQualificationCriteria(updateCriteria) : setDisqualificationCriteria(updateCriteria);
+    }
   };
 
   const renderCriteriaFields = (type) => {
@@ -18,13 +20,13 @@ function Enricher() {
     return criteria.map((criteria, index) => (
       <HStack key={index} spacing={2}>
         <Input value={criteria} onChange={(e) => handleCriteriaChange(index, e.target.value, type)} placeholder={`${type} criteria ${index + 1}`} />
-        <Button colorScheme="green" onClick={() => handleCriteriaChange(index, "High", type)}>
+        <Button colorScheme="green" onClick={() => handleCriteriaChange(index, "High", type, false)}>
           High
         </Button>
-        <Button colorScheme="yellow" onClick={() => handleCriteriaChange(index, "Medium", type)}>
+        <Button colorScheme="yellow" onClick={() => handleCriteriaChange(index, "Medium", type, false)}>
           Medium
         </Button>
-        <Button colorScheme="red" onClick={() => handleCriteriaChange(index, "Low", type)}>
+        <Button colorScheme="red" onClick={() => handleCriteriaChange(index, "Low", type, false)}>
           Low
         </Button>
       </HStack>
