@@ -33,7 +33,7 @@ function Enricher() {
 
   return (
     <Box p="4">
-      <VStack spacing={4}>
+      <VStack spacing={6} boxShadow="base" p="6" rounded="md" bg="whiteAlpha.900">
         <Text fontSize="xl">Enricher Page</Text>
         <Input placeholder="Description of service/product" value={description} onChange={(e) => setDescription(e.target.value)} />
         <Text fontSize="lg">Qualification Criteria</Text>

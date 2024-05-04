@@ -27,7 +27,7 @@ const Index = () => {
 
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
+      <VStack spacing={6} boxShadow="base" p="6" rounded="md" bg="whiteAlpha.900">
         <Text fontSize="2xl" mb={4}>
           Google Maps Scraper
         </Text>

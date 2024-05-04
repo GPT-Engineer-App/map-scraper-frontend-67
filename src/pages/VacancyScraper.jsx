@@ -33,7 +33,7 @@ function VacancyScraper() {
 
   return (
     <Box p="4">
-      <VStack spacing={4}>
+      <VStack spacing={6} boxShadow="base" p="6" rounded="md" bg="whiteAlpha.900">
         <Text fontSize="xl">Vacancy Scraper</Text>
         <Input placeholder="Job Title" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)} />
         <Input placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} />
